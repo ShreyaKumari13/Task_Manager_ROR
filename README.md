@@ -8,7 +8,6 @@ This is a simple **Task Management Application** built as part of the Full Stack
 - **View All Tasks**: All tasks are displayed in a list format showing the task title.
 - **Edit Task**: Users can edit the title and description of an existing task.
 - **Delete Task**: Users can delete any task from the list.
-- **Search Tasks** (Bonus): Users can search for tasks by title.
 - **Basic UI Styling** (Bonus): The UI is styled to enhance the user experience.
 
 ## Tech Stack
@@ -26,8 +25,6 @@ The backend is built using Ruby on Rails and provides the following API endpoint
 - `POST /tasks` - Creates a new task.
 - `PUT /tasks/:id` - Updates a task by its ID.
 - `DELETE /tasks/:id` - Deletes a task by its ID.
-
-## Installation
 
 ### Prerequisites
 
@@ -78,16 +75,3 @@ The backend is built using Ruby on Rails and provides the following API endpoint
 1. Open the frontend at `http://localhost:3001`.
 2. Use the form to add tasks with a title and description.
 3. View all tasks in the list, edit or delete them using the provided buttons.
-
-## Bonus Features
-
-- **Search Bar**: A search bar is included to filter tasks by title.
-- **Basic Styling**: The application includes minimal styling to enhance user interaction.
-
-## Contributing
-
-Feel free to submit issues and pull requests if you'd like to contribute to the project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
