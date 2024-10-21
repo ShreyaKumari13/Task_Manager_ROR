@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -6,7 +6,7 @@ const TaskList = ({ onEdit, onDelete, tasksChanged, onTasksChanged }) => {
   const [tasks, setTasks] = useState([]);
   const navigate = useNavigate();
 
-  const fetchTasks = () => {
+  const fetchTasks = useCallback(() => {
     axios
       .get("http://localhost:3000/tasks")
       .then((response) => {
@@ -14,10 +14,11 @@ const TaskList = ({ onEdit, onDelete, tasksChanged, onTasksChanged }) => {
         onTasksChanged();
       })
       .catch((error) => console.error("Error fetching tasks:", error));
-  };
+  }, [onTasksChanged]);
+
   useEffect(() => {
     fetchTasks();
-  }, [tasksChanged]);
+  }, [fetchTasks, tasksChanged]);
 
   const handleEditClick = (task) => {
     onEdit(task);
